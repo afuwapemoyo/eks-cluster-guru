@@ -24,3 +24,24 @@ module "vpc" {
     "kubernetes.io/role/internal-elb"             = 1
   }
 }
+
+# Use below for existing VPC
+#module "vpc" {
+  #source  = "terraform-aws-modules/vpc/aws"
+  #version = "3.14.2"
+
+  # Use existing VPC
+  #vpc_id = "vpc-xxxxxxxx"  # Replace with your existing VPC ID
+
+  # Existing subnets (replace with your existing subnet IDs)
+  #private_subnets = [
+    #"subnet-xxxxxxxx",  # Replace with your existing private subnet ID
+    #"subnet-yyyyyyyy",  # Replace with another existing private subnet ID
+  #]
+  #public_subnets  = [
+    #"subnet-zzzzzzzz",  # Replace with your existing public subnet ID
+    #"subnet-aaaaaaaa",  # Replace with another existing public subnet ID
+  #]
+
+  # You don't need to define cidr, azs, or new subnet CIDR blocks since you are using existing resources
+#}
